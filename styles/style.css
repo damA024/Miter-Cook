@@ -29,11 +29,35 @@ a {
 
 body {
   background: #ffba93;
-  height: 500vh;
   margin: 0;
   padding: 0;
   overflow-x: visible;
-  width: 100vw;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.5;
+    background-color: #6db11f;
+  }
+  50% {
+    opacity: 1;
+    background-color: #19d600;
+  }
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.no-scroll {
+  overflow-y: hidden; /* Empêche le défilement */
 }
 
 nav {
@@ -92,6 +116,8 @@ h1 {
   transition: 0.8s;
   opacity: 0;
   margin-top: 10px;
+  display: flex;
+  margin-top: 22px;
 }
 #idee2 {
   position: absolute;
@@ -100,8 +126,32 @@ h1 {
   transition: 0.8s;
   top: 50px;
   font-size: 1.3rem;
+  margin-top: 15px;
 }
-
+#h3-idee2 {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}
+#blinking-dot {
+  width: 20px;
+  height: 20px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: blink 1.5s infinite, scale 1.5s infinite;
+  margin: 1px 0 0 10px;
+}
+#blinking-dot2 {
+  width: 20px;
+  height: 20px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: blink 1.5s infinite, scale 1.5s infinite;
+  margin: 5px 0 0 10px;
+  transform: translateX(-30px) translateY(20px);
+}
 #services {
   position: relative;
   height: 50px;
@@ -115,6 +165,14 @@ h1 {
   position: absolute;
   left: 0;
   top: 30px;
+  transition: 0.8s;
+}
+
+#ping {
+  position: absolute;
+  width: 40px;
+  top: -50px;
+  right: 40px;
   transition: 0.8s;
 }
 
@@ -205,7 +263,7 @@ section {
 }
 
 #septsursept h3 {
-  font-size: 3.8vw;
+  font-size: 3.5vw;
   margin: 0;
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
@@ -213,7 +271,7 @@ section {
 }
 
 #septsursept p {
-  font-size: 2.8vw;
+  font-size: 2vw;
   text-align: left;
   margin: 30px;
 }
@@ -334,6 +392,7 @@ iframe {
   margin: 180px 0 100px 0;
   text-align: center;
   color: #580808;
+  z-index: -3;
 }
 
 #menu-etudiant h3 {
@@ -369,6 +428,7 @@ iframe {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  z-index: -2;
 }
 
 #form2 {
@@ -415,6 +475,7 @@ iframe {
 
 #section2 {
   margin-top: 0px;
+  width: 100%;
 }
 
 #form3 {
@@ -578,7 +639,7 @@ iframe {
 
 #passez-commande {
   text-align: center;
-  margin-top: 150px;
+  margin: 80px 0 70px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -608,7 +669,7 @@ iframe {
   width: 45%;
   margin: 30px 0 30px 50px;
 }
-#livreur a {
+#livreur h6 {
   width: 45%;
   text-align: center;
   margin: 30px 50px 30px 0;
@@ -645,11 +706,12 @@ iframe {
 }
 
 #plateforme img {
-  height: 130px;
+  width: 130px;
   border-radius: 20px;
 }
 
 svg {
+  margin: 0;
   height: 130px;
   width: 100%;
   fill: #ff9a3d;
@@ -657,13 +719,14 @@ svg {
 
 #svg {
   background: #000000;
+  z-index: 1;
 }
 
 #icons {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  width: 80%;
+  width: 85%;
   margin: 100px auto 0 auto;
   color: #ffba93;
 }
@@ -677,7 +740,7 @@ svg {
 }
 
 #icons h3 {
-  font-size: 2rem;
+  font-size: calc(0.8rem + 1vw);
   color: #f5f5f5;
   font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
@@ -686,7 +749,7 @@ svg {
 }
 
 #icons p {
-  font-size: 1.8rem;
+  font-size: calc(0.4rem + 1vw);
   margin: 10px 60px;
   font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
@@ -699,12 +762,20 @@ svg {
   justify-content: center;
   align-items: center;
   margin: 60px 0 100px 0;
+  width: 100vw;
 }
 
-#barre {
+#barre-l {
   height: 2px;
   width: 30%;
   background: #ff9a3d;
+  animation: animbarl 5s infinite ease;
+}
+#barre-r {
+  height: 2px;
+  width: 30%;
+  background: #ff9a3d;
+  animation: animbarr 5s infinite ease;
 }
 
 #after-icons p {
@@ -727,47 +798,67 @@ svg {
   display: flex;
   flex-direction: column;
   padding-top: 70px;
-  margin: 0 20vw;
+  margin: 0;
+  width: 100%;
 }
 
 #commentaires h3 {
   text-align: center;
   color: #580808;
-  font-size: 3rem;
+  font-size: calc(0.8rem + 2vw);
   font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+  margin: 0;
+}
+#commentaires #com-h32 {
+  margin: 10px 0;
+  margin: auto;
 }
 
 #commentaires ul {
   margin: 0;
   padding: 0;
 }
-#commentaires li {
-  background: #ffa722;
+#com-container li {
+  background: #ff9915;
   padding: 20px 40px;
   margin-top: 30px;
-  border-radius: 35px;
+  margin-left: 15%;
+  border-radius: 35px 0 0 35px;
 }
-#commentaires h5 {
+#com-container h5 {
   font-size: 1.8rem;
   margin: 0;
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-#commentaires p {
+#com-container p {
   font-size: 1.4rem;
+  margin: 5px 0 10px 0;
+  width: 70%;
+}
+
+#more-com {
+  background: #ffa877;
+  border: none;
+  font-size: 1.2rem;
+  width: 300px;
+  margin: 20px 0 0 15%;
+  padding: 10px;
+  border-radius: 10px;
 }
 #commentaires h4 {
   font-size: 2rem;
-  margin: 100px 0 20px 0;
+  margin: 100px auto 20px 0;
 }
-form {
+#com-form {
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
+  margin: 0 15%;
 }
 #input-text {
   width: 100%;
@@ -780,9 +871,36 @@ form {
   font-size: 1.3rem;
   padding-left: 20px;
 }
+#input-text::placeholder {
+  font-size: 1.3rem;
+}
 #input-text:focus {
   background: #ffc6a5;
   border: 3px solid #ffebdf;
+}
+
+.error {
+  display: none;
+  width: 100%;
+  margin: 15px 0 0 0;
+}
+#error-com div {
+  background: hsl(0, 100%, 75%);
+  border: #ff3d3d 3px solid;
+  border-radius: 20px;
+  width: auto;
+  max-width: 60%;
+  margin: 0 auto 0 0;
+}
+#error-name div {
+  background: hsl(0, 100%, 75%);
+  border: #ff3d3d 3px solid;
+  border-radius: 20px;
+  width: auto;
+}
+.error div p {
+  margin: 10px 5px 10px 10px;
+  font-size: 1rem;
 }
 
 #com-remove {
@@ -795,14 +913,14 @@ form {
   font-family: "Jockey One", sans-serif;
   font-weight: 400;
 }
-#input-submit {
+#com-submit {
   visibility: hidden;
   margin: 10px 0 10px 10px;
   width: 100px;
   height: 50px;
   border-radius: 30px;
   border: 3px solid #f25714;
-  background: #ff9e68;
+  background: #ff7122;
   transition: 0.8s;
   font-size: 1.5rem;
   font-family: "Jockey One", sans-serif;
@@ -812,24 +930,75 @@ button:hover {
   cursor: pointer;
 }
 
+.active {
+  display: flex !important;
+}
+#popup {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+}
+#popup-content {
+  position: relative;
+  width: 700px;
+  height: min-content;
+  padding: 50px 30px;
+  background: #f1f1f1;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#popup-content img {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+}
+
+#popup-content h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+
+#name-input {
+  text-align: center;
+}
+
 footer {
   height: 300px;
-  background: #252525;
-  color: #f5f5f5;
+  background: #f37705;
+  color: #ffe0cf;
   text-align: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 0 150px;
+  padding: 0;
+  border-radius: 70px 70px 0 0;
+  width: 100%;
+  margin-top: 70px;
 }
 footer div {
   width: max-content;
 }
 footer h3 {
   font-size: 3.3rem;
+  margin: 0 0 20px 0;
 }
 footer p {
   font-size: 2rem;
+  margin: 0;
 }
 
 footer img {
@@ -854,9 +1023,16 @@ footer img {
   opacity: 0;
   transform: translateX(100%) !important;
 }
+
 .invisible_button {
   opacity: 0;
   transform: translateX(100%);
+}
+.invisible_com {
+  transform: translateX(90%);
+}
+.invisible_form {
+  transform: translateY(200px);
 }
 .visible {
   opacity: 1;
@@ -892,10 +1068,53 @@ footer img {
     transform: translateY(30px);
   }
 }
+@keyframes animbarr {
+  0% {
+    width: 0%;
+    margin-left: 0%;
+  }
+  25% {
+    width: 30%;
+    margin-left: 0%;
+  }
+  50% {
+    width: 0%;
+    margin-left: 30%;
+  }
+  75% {
+    width: 30%;
+    margin-left: 0%;
+  }
+  100% {
+    width: 0%;
+    margin-left: 0%;
+  }
+}
+@keyframes animbarl {
+  0% {
+    width: 0%;
+    margin-right: 0%;
+  }
+  25% {
+    width: 30%;
+    margin-right: 0%;
+  }
+  50% {
+    width: 0%;
+    margin-right: 30%;
+  }
+  75% {
+    width: 30%;
+    margin-right: 0%;
+  }
+  100% {
+    width: 0%;
+    margin-right: 0%;
+  }
+}
 
 @media screen and (max-width: 1450px) {
   #liservices {
-    display: none;
   }
   #idee2 {
     display: none;
@@ -913,11 +1132,55 @@ footer img {
     right: -13vw;
     top: -90px;
   }
+  #icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    margin-top: 70px;
+  }
+
+  #icons article {
+    width: 70%;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #icons img {
+    height: 130px;
+  }
+  #icons h3 {
+    font-size: calc(2rem + 1vw);
+    color: #f5f5f5;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin: 20px 0;
+  }
+  #icons p {
+    font-size: calc(1.5rem + 1vw);
+    margin: 10px 0;
+    width: calc(280px + 3.6vw);
+  }
+  #after-icons {
+    margin: 0 0 50px 0;
+  }
+  #after-icons p {
+    font-size: calc(0.8rem + 2vw);
+    text-align: center;
+    width: calc(300px + 10vw);
+  }
+  #commentaires h3 {
+    font-size: calc(0.7rem + 2vw);
+  }
 }
 
 @media screen and (max-width: 1300px) {
   #chicken-text {
-    margin-top: 50px;
+    margin-top: 80px;
   }
   #chicken p {
     font-size: 2rem;
@@ -925,7 +1188,7 @@ footer img {
 
   #chicken img {
     transform: translateX(150px);
-    top: -150px;
+    top: -100px;
   }
   #menu-with-button {
     display: flex;
@@ -988,6 +1251,9 @@ footer img {
   #fleche {
     height: calc(35px + 2vw);
   }
+  #passez-commande {
+    margin-top: 40px;
+  }
 }
 @media screen and (max-width: 1160px) {
   #left-intro h4 {
@@ -1006,8 +1272,38 @@ footer img {
   #form3 {
     width: 210vw;
   }
+  #barre-l {
+    animation: none;
+  }
+  #barre-r {
+    animation: none;
+  }
   #input-text::placeholder {
-    font-size: calc(0.5rem + 1.5vw);
+    font-size: calc(0.7rem + 1.2vw);
+  }
+  #commentaires h3 {
+    font-size: 2rem;
+    width: 400px;
+    margin: auto;
+  }
+  #commentaires #com-h32 {
+    width: 90%;
+  }
+  footer {
+    height: 250px;
+  }
+  footer h3 {
+    font-size: 2.5rem;
+    margin: 0 0 20px 0;
+  }
+  footer p {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  footer img {
+    height: 30px;
+    margin-left: 10px;
+    transform: translateY(7px);
   }
 }
 @media screen and (max-width: 900px) {
@@ -1074,7 +1370,10 @@ footer img {
   #chicken img {
     position: relative;
     transform: translateX(0) translateY(0);
-    margin: 0;
+    top: 0;
+    left: 0;
+    margin: 30px 0 0 0;
+    width: calc(180px + 37vw);
   }
   #menu-etudiant h3 {
     font-size: 3.5rem;
@@ -1092,6 +1391,10 @@ footer img {
   #citation {
     font-size: 2rem;
     width: 500px;
+  }
+  #pre-menu {
+    width: 50vw;
+    text-align: center;
   }
   .menu {
     padding: 20px;
@@ -1118,6 +1421,58 @@ footer img {
   .card-m #price {
     transform: translateY(-55px);
   }
+  #passez-commande h2 {
+    font-size: calc(1.3rem + 3vw);
+  }
+  #livreur {
+    flex-direction: column;
+    text-align: center;
+  }
+  #passez-commande p {
+    margin: 15px 0 5px 0;
+    width: 65%;
+    font-size: calc(1rem + 2.3vw);
+  }
+  #livreur h6 {
+    margin: 5px 0 15px 0;
+    width: 90%;
+  }
+  #plateforme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+  }
+  #plateforme p {
+    width: 80%;
+  }
+  #livreur h6 {
+    margin: 5px 0 15px 0;
+    width: 90%;
+  }
+  #commentaires h5 {
+    font-size: calc(1.2rem + 1vw);
+  }
+  #commentaires p {
+    font-size: calc(0.6rem + 1.7vw);
+    margin: 5px 0 10px 0;
+    width: 100%;
+  }
+  #more-com {
+    margin-top: 10px;
+  }
+  #commentaires h4 {
+    margin: 50px auto 20px 0;
+  }
+  footer {
+    height: 200px;
+  }
+  footer h3 {
+    font-size: 2.2rem;
+  }
+  footer p {
+    font-size: 1.3rem;
+  }
 }
 @media screen and (max-width: 700px) {
   #bigm {
@@ -1138,6 +1493,13 @@ footer img {
   #naan-maison p {
     font-size: calc(0.5rem + 2vw);
   }
+  #chicken-text {
+    border-radius: 80px;
+    width: 65vw;
+  }
+  #chicken p {
+    font-size: calc(0.5rem + 4vw);
+  }
   #citation {
     width: 60vw;
   }
@@ -1149,6 +1511,10 @@ footer img {
   }
   #form3 {
     width: 230vw;
+  }
+  #pre-menu {
+    font-size: calc(3rem + 2vw);
+    width: 80%;
   }
   .cards div {
     margin: 0 5px 30px 5px;
@@ -1168,6 +1534,70 @@ footer img {
   .cards div p {
     margin: calc(60px - 4vw) 0px 0px 5px;
   }
+  #livreur h6 {
+    font-size: calc(1.9rem + 1.5vw);
+  }
+  #plateforme img {
+    width: calc(35px + 10vw);
+  }
+  #icons p {
+    width: calc(230px + 9vw);
+  }
+  #commentaires {
+    margin: 0;
+    padding-top: 30px;
+  }
+  #more-com {
+    margin: 20px auto;
+  }
+  #commentaires h4 {
+    margin: 50px auto 20px 0;
+  }
+  #com-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    margin: 0 5%;
+  }
+  #input-text {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    border-color: #ffffff;
+    outline: none;
+    border: 3px solid transparent;
+    transition: 0.3s;
+    font-size: 1.3rem;
+    padding-left: 20px;
+  }
+  footer {
+    height: auto;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  footer div {
+    margin: 30px 0 0 0;
+    padding: 0 0 30px 0;
+    width: 350px;
+    border-bottom: #ffe0cf dashed 1px;
+  }
+  footer h3 {
+    font-size: 3.3rem;
+  }
+  footer p {
+    font-size: 2rem;
+  }
+  #footer2 {
+    text-align: center;
+  }
+  #footer3 {
+    border-bottom: none;
+  }
+  footer img {
+    height: 35px;
+    margin-left: 10px;
+    transform: translateY(7px);
+  }
 }
 @media screen and (max-width: 425px) {
   #mister-cook {
@@ -1177,8 +1607,11 @@ footer img {
     height: 20vw;
     margin: 0 10px;
   }
-  #citation {
-    width: 90vw;
+  #chicken-text {
+    margin-top: 50px;
+  }
+  #menu-etudiant {
+    margin: 50px 0 30px 0;
   }
   #form1 {
     width: 440vw;
@@ -1188,6 +1621,20 @@ footer img {
   }
   #form3 {
     width: 290vw;
+  }
+  #question {
+    font-size: 1.5rem;
+    margin: 60px 0 30px 0;
+  }
+  #citation {
+    font-size: 2rem;
+    width: 90vw;
+    margin-bottom: 30px;
+  }
+  #pre-menu {
+    font-size: calc(2rem + 2.7vw);
+    margin-top: 60px;
+    margin-bottom: 10px;
   }
   #price {
     font-size: 1.1rem;
@@ -1200,6 +1647,81 @@ footer img {
   }
   .card-s img {
     width: 98%;
+  }
+  #after-icons p {
+    color: #ff9a3d;
+    margin: 0 5px 4px 5px;
+  }
+  #passez-commande p {
+    width: 90%;
+  }
+
+  #livreur {
+    border-radius: 30px;
+  }
+  #plateforme {
+    border-radius: 30px;
+  }
+  #plateforme ul {
+    margin: 20px 0;
+  }
+  #plateforme li {
+    margin: 0;
+  }
+  #plateforme img {
+    border-radius: 10px;
+  }
+  #commentaires h3 {
+    width: 90%;
+    font-size: 1.5rem;
+  }
+  #commentaires li {
+    padding: 10px 30px;
+    margin-top: 20px;
+    margin-left: 7%;
+  }
+  #more-com {
+    font-size: 1rem;
+    width: 240px;
+  }
+  #commentaires h4 {
+    font-size: 1.8rem;
+  }
+  #input-text {
+    padding-left: 4%;
+  }
+  #input-text::placeholder {
+    font-size: calc(0.7rem + 1.5vw);
+  }
+  #com-remove {
+    font-size: 1.3rem;
+  }
+  #com-submit {
+    margin: 10px 0 10px 10px;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+  }
+  footer {
+    height: auto;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  footer div {
+    margin: 30px 0 0 0;
+    padding: 0 0 30px 0;
+    width: 280px;
+  }
+  footer h3 {
+    font-size: 2.5rem;
+  }
+  footer p {
+    font-size: 1.6rem;
+  }
+
+  footer img {
+    height: 30px;
   }
 }
 @keyframes changementHauteur {

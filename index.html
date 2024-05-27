@@ -42,19 +42,21 @@
         <h1>Cook</h1>
       </div>
       <h3 id="idee1">
-        Votre restaurant est Ouvert<img
-          id="point-vert"
-          src="point_vert.png"
-          alt=""
-        />
+        Votre restaurant est Ouvert
+        <div id="blinking-dot"></div>
       </h3>
-      <h3 id="idee2">
-        Votre restaurant est<br />Ouvert<img
-          id="point-vert"
-          src="point_vert.png"
-          alt=""
-        />
-      </h3>
+      <div id="idee2">
+        <h3 id="h3-idee2">Votre restaurant est</h3>
+        <h3 id="h3-idee2">
+          Ouvert
+          <div id="blinking-dot2"></div>
+        </h3>
+      </div>
+      <a
+        href="https://www.google.fr/maps/place/Mister+Cook/@50.7320706,3.1576221,17z/data=!3m1!4b1!4m6!3m5!1s0x47c32f7419d33e27:0xb9b99601dc943e1d!8m2!3d50.7320672!4d3.160197!16s%2Fg%2F11l6x00384?entry=ttu"
+        target="_blank"
+        ><img id="ping" src="ping.png" alt=""
+      /></a>
     </nav>
 
     <div id="acceuil">
@@ -116,19 +118,19 @@
             ></iframe>
           </div>
         </div>
-        <div class="invisible" id="chicken">
-          <div class="invisible_l" id="chicken-text">
+        <div id="chicken">
+          <div id="chicken-text">
             <p>
               Dégustez notre poulet frais en Naan, Burger, Galette ou Sandwich!
               Nos équipes se feront un plaisir de répondre a vos attentes.
             </p>
           </div>
-          <img class="invisible_r" src="chicken.png" alt="" />
+          <img src="chicken.png" alt="" />
         </div>
       </section>
 
       <section id="section2">
-        <div id="menu-etudiant">
+        <div class="invisible_form" id="menu-etudiant">
           <div id="form1"></div>
           <h3>Menu Etudiant</h3>
           <p>
@@ -136,7 +138,7 @@
             TOUT nos menus de 11h00 à 14h00!<br />Qu'est ce que tu attends?
           </p>
         </div>
-        <div id="question-citation">
+        <div class="invisible_form" id="question-citation">
           <div id="form2"></div>
           <h3 class="invisible" id="question">
             Cheese Naan, Assiettes, Burgers, Salades ou juste un Milshake?
@@ -145,7 +147,7 @@
             Une grande variété de plats pour une grande variété de saveurs
           </h2>
         </div>
-        <div id="menu">
+        <div class="invisible_form" id="menu">
           <div id="form3"></div>
           <div id="form4"></div>
           <h2 id="pre-menu">Découvrez Notre Menu</h2>
@@ -159,120 +161,58 @@
               </div>
               <div class="cards">
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="burger/cheese.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="burger/double-cheese.png" alt="" />
                   <p id="price">5.90€</p>
-                  <p>Simple<br />Cheese</p>
+                  <p>Double<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="burger/tripple-cheese.png" alt="" />
                   <p id="price">5.90€</p>
-                  <p>Simple<br />Cheese</p>
+                  <p>Tripple<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="burger/big-tasty.png" alt="" />
                   <p id="price">5.90€</p>
-                  <p>Simple<br />Cheese</p>
+                  <p>Big<br />Tasty</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="burger/chicken-burger.png" alt="" />
                   <p id="price">5.90€</p>
-                  <p>Simple<br />Cheese</p>
+                  <p>Chicken<br />Burger</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="burger/chicken-beef.png" alt="" />
                   <p id="price">5.90€</p>
-                  <p>Simple<br />Cheese</p>
+                  <p>Chicken<br />Beef</p>
                 </div>
 
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="burger/burger-bacon.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Big Chef<br />Bacon</p>
                 </div>
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="burger/burger-raclette.png" alt="" />
                   <p id="price">5.90€</p>
-                  <p>Big Chef<br />Bacon</p>
+                  <p>Big Chef<br />Raclette</p>
                 </div>
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="burger/burger-chevre.png" alt="" />
                   <p id="price">5.90€</p>
-                  <p>Big Chef<br />Bacon</p>
+                  <p>Big Chef<br />Chevre</p>
                 </div>
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="burger/burger-boursin.png" alt="" />
                   <p id="price">5.90€</p>
-                  <p>Big Chef<br />Bacon</p>
+                  <p>Big Chef<br />Boursin</p>
                 </div>
               </div>
             </div>
-            <!-- <div class="menu slide_1" id="nos-burgers">
-              <h2 class="menu_name">Nos Burgers</h2>
-              <div class="cards">
-                <div class="cards_l">
-                  <div class="card-s">
-                    <img src="/burgerTS.png" alt="" />
-                    <p id="price">5.90€</p>
-                    <p>Simple<br />Cheese</p>
-                  </div>
-                  <div class="card-s">
-                    <img src="/burgerTS.png" alt="" />
-                    <p id="price">5.90€</p>
-                    <p>Simple<br />Cheese</p>
-                  </div>
-                  <div class="card-s">
-                    <img src="/burgerTS.png" alt="" />
-                    <p id="price">5.90€</p>
-                    <p>Simple<br />Cheese</p>
-                  </div>
-
-                  <div class="card-m">
-                    <img src="/burgerTS.png" alt="" />
-                    <p id="price">5.90€</p>
-                    <p>Big Chef<br />Bacon</p>
-                  </div>
-                  <div class="card-m">
-                    <img src="/burgerTS.png" alt="" />
-                    <p id="price">5.90€</p>
-                    <p>Big Chef<br />Bacon</p>
-                  </div>
-                </div>
-
-                <div class="cards_r">
-                  <div class="card-s">
-                    <img src="/burgerTS.png" alt="" />
-                    <p id="price">5.90€</p>
-                    <p>Simple<br />Cheese</p>
-                  </div>
-                  <div class="card-s">
-                    <img src="/burgerTS.png" alt="" />
-                    <p id="price">5.90€</p>
-                    <p>Simple<br />Cheese</p>
-                  </div>
-                  <div class="card-s">
-                    <img src="/burgerTS.png" alt="" />
-                    <p id="price">5.90€</p>
-                    <p>Simple<br />Cheese</p>
-                  </div>
-
-                  <div class="card-m">
-                    <img src="/burgerTS.png" alt="" />
-                    <p id="price">5.90€</p>
-                    <p>Big Chef<br />Bacon</p>
-                  </div>
-                  <div class="card-m">
-                    <img src="/burgerTS.png" alt="" />
-                    <p id="price">5.90€</p>
-                    <p>Big Chef<br />Bacon</p>
-                  </div>
-                </div>
-              </div>
-            </div> -->
             <div class="menu slide_2" id="nos-naan">
               <div id="h2-fleche">
                 <h2 class="menu_name">Nos Cheese Naan</h2>
@@ -280,53 +220,48 @@
               </div>
               <div class="cards">
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="naan/naan-steak.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="naan/naan-kebab.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="naan/naan-kefta.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="naan/naan-boursin.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
-                  <p id="price">5.90€</p>
-                  <p>Simple<br />Cheese</p>
-                </div>
-                <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="naan/naan-falafel.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
 
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="naan/naan-tandori.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Big Chef<br />Bacon</p>
                 </div>
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="naan/naan-curry.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Big Chef<br />Bacon</p>
                 </div>
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="naan/naan-chicken.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Big Chef<br />Bacon</p>
                 </div>
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="naan/naan-mixte.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Big Chef<br />Bacon</p>
                 </div>
@@ -334,58 +269,60 @@
             </div>
             <div class="menu slide_3" id="nos-sandwich">
               <div id="h2-fleche">
-                <h2 class="menu_name">Nos Sandwich</h2>
+                <h2 class="menu_name">
+                  Nos Sandwich<i> en pain ou en galette</i>
+                </h2>
                 <img id="fleche" src="fleche.png" alt="" />
               </div>
               <div class="cards">
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="sandwich/sandwich-kefta.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="sandwich/sandwich-supreme.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="sandwich/sandwich-kebab.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="sandwich/sandwich-boursin.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="sandwich/mexicanos.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
                 <div class="card-s">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="sandwich/fricadelle.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Simple<br />Cheese</p>
                 </div>
 
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="sandwich/sandwich-curry.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Big Chef<br />Bacon</p>
                 </div>
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="sandwich/sandwich-tandori.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Big Chef<br />Bacon</p>
                 </div>
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="sandwich/sandwich-mixte.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Big Chef<br />Bacon</p>
                 </div>
                 <div class="card-m">
-                  <img src="/burgerTS.png" alt="" />
+                  <img src="sandwich/sandwich-tenders.png" alt="" />
                   <p id="price">5.90€</p>
                   <p>Big Chef<br />Bacon</p>
                 </div>
@@ -572,13 +509,13 @@
             <img class="caroussel_btn" id="next" src="next.png" alt="" />
           </div>
           <div id="passez-commande">
-            <h2>
-              Vous avez Fait votre choix?<br />Passez Commande dés maintenant!
-            </h2>
-            <div id="livreur">
-              <p>Faites vous livrer par un de nos livreurs</p>
-              <a href="tel">03 61 50 39 19</a>
-            </div>
+            <h2>Votre choix est fait?<br />Passez Commande dés maintenant!</h2>
+            <a href="tel:+33 3 61 50 39 19">
+              <div id="livreur">
+                <p>Faites vous livrer par un de nos livreurs</p>
+                <h6>03 61 50 39 19</h6>
+              </div>
+            </a>
             <div id="plateforme">
               <p>
                 ou optez pour une de nos plateforme de livraison partenaires
@@ -587,17 +524,21 @@
                 <li>
                   <a
                     href="https://www.ubereats.com/fr/store/mister-cook/Kpm-_a1TRH-Wvum6RlRm0A?diningMode=DELIVERY"
+                    target="_blank"
                     ><img src="ubereat-color.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a
                     href="https://deliveroo.fr/fr/menu/Lille/tourcoing-centre-ville/mister-cook?geohash=u140xfnw3x6r"
+                    target="_blank"
                     ><img src="deliveroo-color.png" alt="" />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.just-eat.fr/menu/mister-cook-1"
+                  <a
+                    href="https://www.just-eat.fr/menu/mister-cook-1"
+                    target="_blank"
                     ><img src="justeat-color.png" alt="" />
                   </a>
                 </li>
@@ -641,28 +582,28 @@
           </svg>
 
           <div id="icons">
-            <article>
+            <article class="invisible_l">
               <img src="serveur.png" alt="" />
               <h3>UN ACCEUIL CHALEUREUX</h3>
               <p>Chez Mister Cook, le client est roi !</p>
             </article>
-            <article>
+            <article class="invisible_b">
               <img src="chrono.png" alt="" />
               <h3>UN SERVICE RAPIDE</h3>
               <p>
                 On prépare vos plats avec rapidité et beaucoup de tendresse.
               </p>
             </article>
-            <article>
+            <article class="invisible_r">
               <img src="qualite.png" alt="" />
               <h3>UNE VIANDE DE QUALITEE</h3>
               <p>Que de la viande fraiche de premier choix!</p>
             </article>
           </div>
           <div id="after-icons">
-            <div id="barre"></div>
+            <div id="barre-l"></div>
             <p>Retrouvez tout ca chez Mister Cook</p>
-            <div id="barre"></div>
+            <div id="barre-r"></div>
           </div>
           <svg
             id="svg-bot"
@@ -701,29 +642,52 @@
         </div>
       </section>
       <section id="commentaires">
-        <h3>
-          Vous ne voulez pas nous croire sur parole?<br />
-          Ecoutez plutôt l'avis de nos clients!
-        </h3>
+        <h3 id="com-h31">Vous ne voulez pas nous croire sur parole?</h3>
+        <h3 id="com-h32">Écoutez plutôt l'avis de nos clients!</h3>
         <ul id="com-container"></ul>
         <button type="button" id="more-com">
           Charger plus de commentaires
         </button>
-        <h4>Envie de partager votre éxperience?</h4>
         <form id="com-form">
+          <h4>Envie de partager votre expérience?</h4>
+
           <input
             type="text"
             placeholder="Laissez vous aussi un commentaire... "
             id="input-text"
           />
+          <div id="error-com" class="error">
+            <div>
+              <p></p>
+            </div>
+          </div>
           <button class="invisible_button" type="button" id="com-remove">
             Annuler
           </button>
-          <button class="invisible_button" type="submit" id="input-submit">
+          <button class="invisible_button" type="submit" id="com-submit">
             Envoyer
           </button>
         </form>
       </section>
+      <div id="popup">
+        <div id="popup-content">
+          <button><img id="close-popup" src="close.png" alt="" /></button>
+          <h2>Entrez le nom qui s'affichera avec votre commentaire</h2>
+          <form id="name-form">
+            <input type="text" id="name-input" />
+            <button type="submit" id="name-submit">Valider</button>
+          </form>
+          <div id="popup-message">
+            <p></p>
+            <div id="error-name" class="error">
+              <div>
+                <p></p>
+              </div>
+            </div>
+            <p></p>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div id="footer1">
@@ -740,6 +704,7 @@
         </p>
       </div>
       <div id="footer3">
+        <a href=""></a>
         <p>
           Retrouvez nous sur<br />Instagram<img src="instagram.png" alt="" />
         </p>

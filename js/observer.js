@@ -14,7 +14,7 @@ export function observer(targets) {
             entry.target.classList.remove(className);
           }
         });
-        entry.target.style.transition = "0.6s";
+        entry.target.style.transition = "0.8s";
       }
     });
   }, options);

@@ -8,8 +8,8 @@ export function menuResponsive() {
     if (window.innerWidth < 1300) {
       const menuName = menu.firstElementChild;
       const fleche = menuName.lastElementChild;
-
       let currentHeight;
+
       menuName.addEventListener("click", () => {
         currentHeight = menu.offsetHeight;
         if (currentHeight < 200) {
@@ -34,6 +34,11 @@ export function menuResponsive() {
         card.classList.add("invisible_b");
       });
       observer(cards);
+
+      //Pour les assietes
+      document.getElementById("assiettes").src = "assiettes-responsive.jpg";
+      document.getElementById("tacos").src = "tacos-responsive.jpg";
+      document.getElementById("desserts").src = "desserts-responsive.jpg";
     } else {
       // Sinon, supprimez la classe
       cards.forEach((card) => {

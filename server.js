@@ -2,7 +2,7 @@ const express = require("express");
 const { readFile, writeFile } = require("fs");
 const path = require("path");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const basePath = "/MisterCook";
 // Middleware pour servir les fichiers statiques depuis le répertoire "public"

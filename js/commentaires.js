@@ -14,10 +14,12 @@ export function commentaires() {
           .firstElementChild;
       // Affiche le popup
       popup.classList.add("active");
-      body.classList.add("no-scroll");
+      document.documentElement.style.overflowY = "hidden";
       document.getElementById("close-popup").addEventListener("click", () => {
         popup.classList.remove("active");
-        body.classList.remove("no-scroll");
+        document.documentElement.style.overflowY = "visible";
+
+        error.classList.remove("active");
       });
 
       // Ajoute un gestionnaire d'événements pour la soumission du formulaire
@@ -27,13 +29,17 @@ export function commentaires() {
         // Récupère la valeur saisie dans le champ input
         const comName = document.getElementById("name-input").value.trim();
 
-        if (comName.length < 3) {
+        if (comName < 1) {
+          error.classList.add("active");
+          textError.textContent = "Veuillez entrer un nom";
+          return; // Sortir de l'événement si le commentaire est vide
+        } else if (comName.length < 3) {
           error.classList.add("active");
           textError.textContent = "Le nom indiqué est trop court";
-          return; // Sortir de l'événement si le commentaire est vide
-        } else if (comName.length > 30) {
+          return;
+        } else if (comName.length > 20) {
           textError.textContent = "Le nom indiqué est trop long";
-          return; // Sortir de l'événement si nom est trop court
+          return;
         }
         error.classList.remove("active");
 
@@ -47,20 +53,17 @@ export function commentaires() {
 
   async function envoyerCom(name, content) {
     try {
-      const response = await fetch(
-        "http://localhost:3000/enregistrer-commentaire",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            nom: name,
-            commentaire: content,
-            verified: false,
-          }),
-        }
-      );
+      const response = await fetch("/enregistrer-commentaire", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nom: name,
+          commentaire: content,
+          verified: false,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Erreur lors de l'enregistrement du commentaire");
@@ -102,9 +105,11 @@ export function commentaires() {
     recupererNom()
       .then((comName) => {
         envoyerCom(comName, comContent);
+        document.getElementById("popup-title").remove();
+        document.getElementById("name-form").remove();
         message1.textContent =
-          "Nous avons bien recu votre commentaire, il sera soumis à une vérification avant d'être visible dans l'espace commentaire.";
-        message2.textContent = "Merci pour votre retour!";
+          "Nous avons bien reçu votre commentaire, il sera soumis à une vérification avant d'être visible dans l'espace commentaires.";
+        message2.textContent = "Merci pour votre retour !";
         document.getElementById("close-popup").addEventListener("click", () => {
           popup.classList.remove("active");
           body.classList.remove("no-scroll");
@@ -151,7 +156,7 @@ export function commentaires() {
       const comData = comments[i];
       if (comData.verified == true) {
         const li = document.createElement("li");
-        const h5 = document.createElement("h5");
+        const h5 = document.createElement("h4");
         const p = document.createElement("p");
         h5.textContent = comData.nom;
         p.textContent = comData.commentaire;

@@ -25,39 +25,146 @@
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
   background: #ffba93;
   margin: 0;
   padding: 0;
-  overflow-x: visible;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 @keyframes blink {
-  0%,
-  100% {
-    opacity: 0.5;
+  0% {
+    opacity: 0.9;
     background-color: #6db11f;
   }
   50% {
     opacity: 1;
     background-color: #19d600;
   }
+  100% {
+    opacity: 0.9;
+    background-color: #6db11f;
+  }
 }
 
 @keyframes scale {
-  0%,
-  100% {
+  0% {
     transform: scale(1);
   }
   50% {
     transform: scale(1.2);
   }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .no-scroll {
   overflow-y: hidden; /* Empêche le défilement */
+}
+
+#burger-menu {
+  visibility: hidden;
+  width: 40px;
+  position: absolute;
+  top: -103px;
+  left: 45px;
+  transition: 0.8s;
+}
+
+.unfolded {
+  height: 600px;
+  box-shadow: 0px 6px 6px 6px rgb(0 0 0 / 27%);
+}
+.unfolded #burger-menu {
+  top: 148px !important;
+  left: 65px;
+}
+.unfolded .unfolded_item {
+  transform: translateX(0px) !important;
+}
+.unfolded #mister-cook {
+  top: 0 !important;
+  transform: translateY(0) !important;
+}
+.unfolded #logo {
+  height: 120px;
+  margin: 35px 0 10px 0;
+}
+.unfolded #ping {
+  top: 145px !important;
+  right: 60px;
+}
+
+.unfolded #idee1 {
+  top: 535px !important;
+  font-size: 1.17rem !important;
+  margin-left: 0 !important;
+}
+#burger-menu1 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 550px;
+  height: 150px;
+  background: #ff7325;
+  border-radius: 60px;
+  transform: translateX(-1000px);
+  transition: 0.9s;
+}
+nav h3 {
+  margin: 15px 0 0 0;
+  font-size: 1.8rem;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+#burger-menu-liservices {
+  position: relative;
+  padding: 0;
+  top: 0;
+}
+#burger-menu-liservices img {
+  margin: 0 10px;
+  height: 60px !important;
+}
+#burger-menu2 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 550px;
+  height: 130px;
+  margin: 20px 0;
+  background: #ff9e68;
+  border-radius: 60px;
+  text-align: center;
+  color: #000000;
+  transform: translateX(calc(1000px + 100%));
+  transition: 0.9s;
+}
+#burger-menu2 a {
+  color: #000000;
+}
+#burger-menu2 h4 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 nav {
@@ -89,6 +196,7 @@ nav {
   align-items: center;
   margin-top: 20px;
   transition: 0.8s;
+  top: 0;
 }
 h1 {
   margin: 0 0 0px 0;
@@ -115,9 +223,8 @@ h1 {
   top: -50px;
   transition: 0.8s;
   opacity: 0;
-  margin-top: 10px;
+  margin-top: 17px;
   display: flex;
-  margin-top: 22px;
 }
 #idee2 {
   position: absolute;
@@ -125,10 +232,12 @@ h1 {
   right: 100px;
   transition: 0.8s;
   top: 50px;
-  font-size: 1.3rem;
+  font-size: 1.3rem !important;
   margin-top: 15px;
 }
 #h3-idee2 {
+  font-size: 1.3rem !important;
+
   margin: 5px;
   display: flex;
   justify-content: center;
@@ -140,7 +249,7 @@ h1 {
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   animation: blink 1.5s infinite, scale 1.5s infinite;
-  margin: 1px 0 0 10px;
+  margin: 4px 0 0 10px;
 }
 #blinking-dot2 {
   width: 20px;
@@ -149,7 +258,7 @@ h1 {
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   animation: blink 1.5s infinite, scale 1.5s infinite;
-  margin: 5px 0 0 10px;
+  margin: 3px 0 0 10px;
   transform: translateX(-30px) translateY(20px);
 }
 #services {
@@ -160,7 +269,7 @@ h1 {
   transition: 0.8s;
 }
 
-#liservices {
+.liservices {
   display: flex;
   position: absolute;
   left: 0;
@@ -259,7 +368,7 @@ section {
   text-align: center;
   color: rgb(223, 223, 223);
   margin-top: 80px;
-  padding: 30px 0;
+  padding: 25px 0;
 }
 
 #septsursept h3 {
@@ -434,7 +543,7 @@ iframe {
 #form2 {
   background: #f37705;
   width: 200vw;
-  height: 1500px;
+  height: 2000px;
   border-radius: 100% 100% 0 0;
   position: absolute;
   z-index: -1;
@@ -510,15 +619,32 @@ iframe {
   position: relative;
 }
 
-.caroussel_btn {
-  height: 50px;
+#caroussel-btn-l {
+  background: none;
+  border: none;
   position: absolute;
-}
-#prev {
   left: 0;
 }
-#next {
+#caroussel-btn-r {
+  background: none;
+  border: none;
+  position: absolute;
   right: 0;
+}
+
+.caroussel_btn {
+  height: 50px;
+  transition: 0.1s;
+}
+
+#prev:active {
+  height: 44px;
+  transform: translateX(3px);
+}
+
+#next:active {
+  height: 44px;
+  transform: translateX(-3px);
 }
 
 .menu {
@@ -548,6 +674,7 @@ iframe {
 #h2-fleche {
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .cards {
@@ -579,13 +706,13 @@ iframe {
   background: linear-gradient(#13a1cc 50%, var(--color1));
 }
 #nos-assiettes .cards div {
-  background: linear-gradient(#383cb1 50%, var(--color1));
+  background: linear-gradient(#aa132f 50%, var(--color1));
 }
 #nos-tacos .cards div {
   background: linear-gradient(#6219ac 50%, var(--color1));
 }
 #nos-galettes .cards div {
-  background: linear-gradient(#aa132f 50%, var(--color1));
+  background: linear-gradient(#383cb1 50%, var(--color1));
 }
 
 .card-s {
@@ -598,6 +725,36 @@ iframe {
   text-align: center;
   width: calc(24% - 10px);
   height: calc(220px + 7vw);
+}
+#assiettes-container {
+  height: calc(220px + 7vw + 160px + 5vw + 65px);
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 55px 0;
+}
+#assiettes {
+  height: 100%;
+  border-radius: 25px;
+}
+#tacos-container {
+  height: calc(220px + 7vw + 160px + 5vw + 90px);
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 30px 0;
+}
+#tacos {
+  height: 100%;
+  border-radius: 25px;
+}
+#desserts-container {
+  height: calc(220px + 7vw + 160px + 5vw + 90px);
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 30px 0;
+}
+#desserts {
+  height: 100%;
+  border-radius: 25px;
 }
 
 .card-s img {
@@ -669,7 +826,7 @@ iframe {
   width: 45%;
   margin: 30px 0 30px 50px;
 }
-#livreur h6 {
+#livreur h3 {
   width: 45%;
   text-align: center;
   margin: 30px 50px 30px 0;
@@ -715,6 +872,7 @@ svg {
   height: 130px;
   width: 100%;
   fill: #ff9a3d;
+  transform: translateY(-5px);
 }
 
 #svg {
@@ -828,7 +986,7 @@ svg {
   margin-left: 15%;
   border-radius: 35px 0 0 35px;
 }
-#com-container h5 {
+#com-container h4 {
   font-size: 1.8rem;
   margin: 0;
   font-family: "Archivo Black", sans-serif;
@@ -843,14 +1001,22 @@ svg {
 
 #more-com {
   background: #ffa877;
-  border: none;
+  border: 2px solid #ffa877;
   font-size: 1.2rem;
   width: 300px;
   margin: 20px 0 0 15%;
-  padding: 10px;
+  padding: 10px 8px;
   border-radius: 10px;
 }
-#commentaires h4 {
+#more-com:hover {
+  border: 2px solid #eb8144;
+  background: #fc9e67;
+}
+#more-com:active {
+  background: #ff9253;
+  border: 2px solid #dd7438;
+}
+#commentaires #share {
   font-size: 2rem;
   margin: 100px auto 20px 0;
 }
@@ -886,7 +1052,7 @@ svg {
 }
 #error-com div {
   background: hsl(0, 100%, 75%);
-  border: #ff3d3d 3px solid;
+  border: #ff3d3d 2px solid;
   border-radius: 20px;
   width: auto;
   max-width: 60%;
@@ -894,17 +1060,19 @@ svg {
 }
 #error-name div {
   background: hsl(0, 100%, 75%);
-  border: #ff3d3d 3px solid;
+  border: #ff3d3d 2px solid;
   border-radius: 20px;
   width: auto;
 }
 .error div p {
-  margin: 10px 5px 10px 10px;
+  margin: 10px 10px 10px 10px;
   font-size: 1rem;
 }
 
 #com-remove {
-  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 10%;
   background: none;
   border: none;
@@ -912,9 +1080,12 @@ svg {
   font-size: 1.5rem;
   font-family: "Jockey One", sans-serif;
   font-weight: 400;
+  color: black;
 }
 #com-submit {
-  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 10px 0 10px 10px;
   width: 100px;
   height: 50px;
@@ -925,7 +1096,19 @@ svg {
   font-size: 1.5rem;
   font-family: "Jockey One", sans-serif;
   font-weight: 400;
+  color: black;
 }
+#com-submit:hover {
+  background-color: #ff8442;
+  border: 3px solid #f35f1f;
+  transition: background-color 0s, border 0s !important;
+}
+#com-submit:active {
+  background-color: #ff955c;
+  border: 3px solid #ff6f32;
+  transition: background-color 0s, border 0s !important;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -952,11 +1135,16 @@ button:hover {
   width: 700px;
   height: min-content;
   padding: 50px 30px;
-  background: #f1f1f1;
+  background: #ffc6a5;
   border-radius: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#btn-close-popup {
+  background: none;
+  border: none;
 }
 
 #popup-content img {
@@ -970,13 +1158,69 @@ button:hover {
   text-align: center;
   font-size: 2rem;
   margin: 0;
+  color: #580808;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#name-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 #name-input {
   text-align: center;
+  height: 40px;
+  width: 170px;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+}
+#name-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 70px;
+  border-radius: 0 20px 20px 0;
+  border: none;
+  margin: 0;
+  background: #ffdecb;
+  font-size: 1rem;
+  font-family: "Signika", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-variation-settings: "GRAD" 0;
+  color: black;
+}
+
+.succes {
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+#succes1 {
+  margin: 0px 90px 0 90px;
+  color: #292929;
+  font-size: 1.4rem;
+}
+#succes2 {
+  margin-top: 20px;
+  color: #f25714;
+  font-size: 1.8rem;
 }
 
 footer {
+  position: relative;
   height: 300px;
   background: #f37705;
   color: #ffe0cf;
@@ -988,6 +1232,8 @@ footer {
   border-radius: 70px 70px 0 0;
   width: 100%;
   margin-top: 70px;
+  position: relative;
+  padding-bottom: 30px;
 }
 footer div {
   width: max-content;
@@ -1011,6 +1257,12 @@ footer img {
   text-align: left;
 }
 
+#copyright {
+  font-size: 1.1rem;
+  position: absolute;
+  bottom: 20px;
+}
+
 .invisible_b {
   opacity: 0;
   transform: translateY(70px);
@@ -1024,7 +1276,7 @@ footer img {
   transform: translateX(100%) !important;
 }
 
-.invisible_button {
+.anim_button {
   opacity: 0;
   transform: translateX(100%);
 }
@@ -1045,7 +1297,7 @@ footer img {
 }
 .slide_2 {
   position: absolute;
-  transform: translateX(1450px);
+  transform: translateX(1480px);
 }
 .slide_3 {
   transform: translateX(3140px);
@@ -1114,10 +1366,11 @@ footer img {
 }
 
 @media screen and (max-width: 1450px) {
-  #liservices {
-  }
   #idee2 {
     display: none;
+  }
+  #liservices {
+    top: -200px;
   }
   #bigm {
     width: 90vw;
@@ -1222,6 +1475,43 @@ footer img {
     width: 335px;
     height: 360px;
   }
+
+  #assiettes-container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  #assiettes {
+    width: 100%;
+    margin: 10px 0 0px 0;
+  }
+
+  #tacos-container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  #tacos {
+    width: 100%;
+    margin: 10px 0 0px 0;
+  }
+
+  #desserts-container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  #desserts {
+    width: 100%;
+    margin: 10px 0 0px 0;
+  }
+
   .slide_0 {
     position: relative;
     transform: translateX(-0);
@@ -1310,6 +1600,18 @@ footer img {
   h1 {
     font-size: 12vw;
     transition: none;
+  }
+  #liservices {
+    display: none;
+  }
+  #burger-menu {
+    visibility: visible;
+  }
+  #burger-menu1 {
+    display: flex;
+  }
+  #burger-menu2 {
+    display: flex;
   }
   #logo {
     height: 25vw;
@@ -1433,7 +1735,7 @@ footer img {
     width: 65%;
     font-size: calc(1rem + 2.3vw);
   }
-  #livreur h6 {
+  #livreur h3 {
     margin: 5px 0 15px 0;
     width: 90%;
   }
@@ -1446,11 +1748,11 @@ footer img {
   #plateforme p {
     width: 80%;
   }
-  #livreur h6 {
+  #livreur h3 {
     margin: 5px 0 15px 0;
     width: 90%;
   }
-  #commentaires h5 {
+  #commentaires h3 {
     font-size: calc(1.2rem + 1vw);
   }
   #commentaires p {
@@ -1461,8 +1763,22 @@ footer img {
   #more-com {
     margin-top: 10px;
   }
-  #commentaires h4 {
+  #commentaires #share {
     margin: 50px auto 20px 0;
+  }
+  #error-com div {
+    padding: 0 15px;
+  }
+  #popup-content {
+    width: 80%;
+  }
+  #popup-content h2 {
+    margin: 0 30px;
+    font-size: 1.9rem;
+  }
+  #succes1 {
+    font-size: 1.2rem;
+    margin: 0px 60px 0 60px;
   }
   footer {
     height: 200px;
@@ -1473,19 +1789,52 @@ footer img {
   footer p {
     font-size: 1.3rem;
   }
+  #copyright {
+    font-size: 0.8rem;
+  }
 }
 @media screen and (max-width: 700px) {
+  #burger-menu1 {
+    width: 90vw;
+  }
+  #burger-menu2 {
+    width: 90vw;
+  }
+  nav h3 {
+    font-size: calc(0.6rem + 3vw);
+  }
+  #idee1 {
+    margin-top: 22px;
+  }
+  #blinking-dot {
+    margin-top: 0px;
+  }
+  #burger-menu-liservices img {
+    height: 55px !important;
+  }
+  #burger-menu2 h4 {
+    font-size: 2.4rem;
+  }
+  #ping {
+    top: -50px !important;
+  }
+  #idee1 {
+    font-size: 1rem;
+  }
   #bigm {
     width: 90vw;
   }
   #bgslogan {
     margin: calc(100px + 25vw) 0 15vw 0;
   }
+  #septsursept {
+    padding-bottom: 5px;
+  }
   #septsursept h3 {
     font-size: 8vw;
   }
   #septsursept p {
-    font-size: calc(1rem + 3vw);
+    font-size: calc(0.8rem + 3vw);
   }
   #large-menu p {
     font-size: calc(0.5rem + 2vw);
@@ -1520,21 +1869,21 @@ footer img {
     margin: 0 5px 30px 5px;
   }
   .card-s {
-    height: calc(110px + 13vw);
+    height: calc(95px + 13vw);
   }
   .card-m {
     height: min-content;
   }
 
   .card-m p {
-    font-size: calc(1.5vw + 1rem);
+    font-size: calc(1.5vw + 0.9rem);
     margin: calc(60px - 4vw) 0 0 5px;
   }
 
   .cards div p {
     margin: calc(60px - 4vw) 0px 0px 5px;
   }
-  #livreur h6 {
+  #livreur h3 {
     font-size: calc(1.9rem + 1.5vw);
   }
   #plateforme img {
@@ -1550,7 +1899,7 @@ footer img {
   #more-com {
     margin: 20px auto;
   }
-  #commentaires h4 {
+  #commentaires #share {
     margin: 50px auto 20px 0;
   }
   #com-form {
@@ -1569,6 +1918,24 @@ footer img {
     transition: 0.3s;
     font-size: 1.3rem;
     padding-left: 20px;
+  }
+  #popup-content {
+    width: 70%;
+    padding-bottom: 15px;
+  }
+  #popup-content img {
+    width: 27px;
+  }
+  #popup-content h2 {
+    font-size: 1.4rem;
+    margin: 0 5px;
+  }
+  #succes1 {
+    font-size: 1rem;
+    margin: 0px 15px 0 15px;
+  }
+  #succes2 {
+    font-size: 1.5rem;
   }
   footer {
     height: auto;
@@ -1600,8 +1967,63 @@ footer img {
   }
 }
 @media screen and (max-width: 425px) {
+  #blinking-dot {
+    width: 17px;
+    height: 17px;
+    margin: 0px 0 0 8px;
+  }
+  #blinking-dot2 {
+    width: 17px;
+    height: 17px;
+    margin-left: 8px;
+  }
+  .unfolded {
+    height: 550px;
+  }
+  .unfolded #burger-menu {
+    left: 45px;
+  }
+  .unfolded #ping {
+    right: 40px;
+  }
   #mister-cook {
     transform: translateY(30px);
+  }
+  .unfolded #logo {
+    margin-top: 45px;
+  }
+  #burger-menu1 {
+    height: 125px;
+    border-radius: 50px;
+  }
+  #burger-menu2 {
+    height: 110px;
+    border-radius: 50px;
+  }
+  .unfolded #idee1 {
+    top: 490px !important;
+  }
+  nav h3 {
+    margin: 10px 0 0 0;
+  }
+  #burger-menu2 h3 {
+    margin: 0 20px;
+  }
+  #burger-menu-liservices img {
+    margin: 0 5px;
+    height: 50px !important;
+  }
+  #burger-menu2 h4 {
+    font-size: 2.2rem;
+    margin: 0;
+  }
+  #burger-menu {
+    width: 30px;
+    left: 30px;
+  }
+  #idee1 {
+    font-size: calc(0.7rem + 1.3vw);
+    margin-left: 40px;
   }
   #left-intro img {
     height: 20vw;
@@ -1637,10 +2059,10 @@ footer img {
     margin-bottom: 10px;
   }
   #price {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .card-s p {
-    font-size: calc(0.8rem + 0.55vw);
+    font-size: calc(0.6rem + 0.55vw);
   }
   .cards div p {
     margin: calc(60px - 4vw) 0 0 5px;
@@ -1684,7 +2106,7 @@ footer img {
     font-size: 1rem;
     width: 240px;
   }
-  #commentaires h4 {
+  #commentaires h3 {
     font-size: 1.8rem;
   }
   #input-text {
@@ -1692,6 +2114,15 @@ footer img {
   }
   #input-text::placeholder {
     font-size: calc(0.7rem + 1.5vw);
+  }
+  #error-com {
+    width: 100%;
+  }
+  #error-com div {
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 15px;
   }
   #com-remove {
     font-size: 1.3rem;
@@ -1702,6 +2133,24 @@ footer img {
     height: 40px;
     border-radius: 20px;
     font-size: 1.2rem;
+  }
+  #popup-content {
+    width: 90%;
+    padding: 0 0 10px 0;
+  }
+  #popup-content img {
+    width: 27px;
+  }
+  #popup-content h2 {
+    font-size: 1.4rem;
+    margin: 40px 40px 5px 40px;
+  }
+  #succes1 {
+    font-size: 1rem;
+    margin: 45px 35px 0 35px;
+  }
+  #succes2 {
+    font-size: 1.3rem;
   }
   footer {
     height: auto;
@@ -1724,6 +2173,18 @@ footer img {
     height: 30px;
   }
 }
+
+@media screen and (min-width: 2000px) {
+  .slide_0 {
+    position: absolute;
+    transform: translateX(-72vw);
+  }
+  .slide_2 {
+    position: absolute;
+    transform: translateX(calc(72vw + 30px));
+  }
+}
+
 @keyframes changementHauteur {
   0% {
     height: 100px;

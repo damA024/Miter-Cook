@@ -9,15 +9,15 @@ export function input() {
     inputText.value = "";
     comRemove.style.visibility = "hidden";
     inputSubmit.style.visibility = "hidden";
-    comRemove.classList.add("invisible_button");
-    inputSubmit.classList.add("invisible_button");
+    comRemove.classList.add("anim_button");
+    inputSubmit.classList.add("anim_button");
   });
   inputText.addEventListener("focus", () => {
-    comRemove.style.visibility = "visible";
-    inputSubmit.style.visibility = "visible";
     comRemove.style.transition = "0.6s";
     inputSubmit.style.transition = "0.6s";
-    comRemove.classList.remove("invisible_button");
-    inputSubmit.classList.remove("invisible_button");
+    comRemove.style.visibility = "visible";
+    inputSubmit.style.visibility = "visible";
+    comRemove.classList.remove("anim_button");
+    inputSubmit.classList.remove("anim_button");
   });
 }

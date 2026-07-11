@@ -1,0 +1,53 @@
+[
+  {
+    "category": "Menus Tex-Mex",
+    "content": [
+      {
+        "title": "Menu tenders",
+        "price": "",
+        "description": "5 tenders. Servi avec frites, sauce et boisson au choix.",
+        "image": ""
+      },
+      {
+        "title": "Menu tenders",
+        "price": "",
+        "description": "5 tenders. Servi avec frites, sauce et boisson au choix.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "category": "Menus barquettes Tex-Mex",
+    "content": [
+      {
+        "title": "Menu barquette wings",
+        "price": "",
+        "description": "20 wings. Servi avec 4 portions de frites, sauce et une bouteille 1,5 L au choix.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "category": "Menus Naans",
+    "content": [
+      {
+        "title": "Menu naan tandoori",
+        "price": "",
+        "description": "Crudités et sauce au choix. Servi avec frites et boisson au choix.",
+        "image": ""
+      },
+      {
+        "title": "",
+        "price": "",
+        "description": "",
+        "image": ""
+      },
+      {
+        "title": "",
+        "price": "",
+        "description": "",
+        "image": ""
+      }
+    ]
+  }
+]

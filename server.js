@@ -8,12 +8,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "maptiteclesecrete92";
 
-const basePath = "/MisterCook";
-// Middleware pour servir les fichiers statiques depuis le rÃ©pertoire "public"
-app.use(express.static(path.join(__dirname, "MisterCook")));
-app.use(express.static(path.join(__dirname, "styles")));
-app.use(express.static(path.join(__dirname, "js")));
-app.use(express.static(path.join(__dirname, "img")));
+// Sert le projet avec la même arborescence que celle référencée par index.html.
+app.use(express.static(__dirname));
 
 // Middleware pour parser le corps des requÃªtes en JSON
 app.use(express.json());

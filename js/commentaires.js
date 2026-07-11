@@ -1,4 +1,4 @@
-import { observer } from "/observer.js";
+import { observer } from "./observer.js";
 
 export function commentaires() {
   // COMMENTAIRES OMG

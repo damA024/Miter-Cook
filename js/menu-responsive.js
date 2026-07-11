@@ -1,4 +1,4 @@
-import { observer } from "/observer.js";
+import { observer } from "./observer.js";
 
 export function menuResponsive() {
   //pour déployer et replier les menus en mode responsive
@@ -36,9 +36,9 @@ export function menuResponsive() {
       observer(cards);
 
       //Pour les assietes
-      document.getElementById("assiettes").src = "assiettes-responsive.jpg";
-      document.getElementById("tacos").src = "tacos-responsive.jpg";
-      document.getElementById("desserts").src = "desserts-responsive.jpg";
+      document.getElementById("assiettes").src = "img/assiettes-responsive.jpg";
+      document.getElementById("tacos").src = "img/tacos-responsive.jpg";
+      document.getElementById("desserts").src = "img/desserts-responsive.jpg";
     } else {
       // Sinon, supprimez la classe
       cards.forEach((card) => {

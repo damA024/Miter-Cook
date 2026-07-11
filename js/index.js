@@ -1,43 +1,43 @@
-import { nav } from "/nav.js";
+import { nav } from "./nav.js";
 nav();
 
 //------------------------------------------------------------------------------------------------
 
-import { observer } from "/observer.js";
+import { observer } from "./observer.js";
 const targets = document.querySelectorAll("[class^='invisible_']");
 observer(targets);
 
 //------------------------------------------------------------------------------------------------
 
-import { carrousel } from "/carrousel.js";
+import { carrousel } from "./carrousel.js";
 carrousel();
 
 //------------------------------------------------------------------------------------------------
 
-import { menuResponsive } from "/menu-responsive.js";
+import { menuResponsive } from "./menu-responsive.js";
 menuResponsive();
 
 //------------------------------------------------------------------------------------------------
 
-import { scrollX } from "/scroll-x.js";
+import { scrollX } from "./scroll-x.js";
 scrollX();
 
 //------------------------------------------------------------------------------------------------
 
-import { commentaires } from "/commentaires.js";
+import { commentaires } from "./commentaires.js";
 commentaires();
 
 //------------------------------------------------------------------------------------------------
 
-import { input } from "/input.js";
+import { input } from "./input.js";
 input();
 
 //------------------------------------------------------------------------------------------------
 
-import { signup } from "/signup.js";
+import { signup } from "./signup.js";
 signup();
 
 //------------------------------------------------------------------------------------------------
 
-import { signin } from "/signin.js";
+import { signin } from "./signin.js";
 signin();

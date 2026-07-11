@@ -46,8 +46,8 @@ export function nav() {
         liservices.style.top = "30px";
 
         ping.style.top = "-50px";
-        idee1.style.top = "-50px";
-        idee1.style.opacity = "0";
+        idee1_ouvert.style.top = "-50px";
+        idee1_ouvert.style.opacity = "0";
         idee2.style.top = "50px";
         services.forEach((service) => {
           service.style.height = "50px";
@@ -72,7 +72,7 @@ export function nav() {
         liservices.style.top = "55px";
 
         ping.style.top = "100px";
-        idee1.style.top = "90px";
+        idee1_ouvert.style.top = "90px";
         idee2.style.top = "-70px";
         services.forEach((service) => {
           service.style.height = "40px";
@@ -87,7 +87,7 @@ export function nav() {
         if (isTransitionCompleted) {
           // Délai d'une seconde avant le changement d'opacité
           setTimeout(() => {
-            idee1.style.opacity = "1";
+            idee1_ouvert.style.opacity = "1";
           }, 400);
 
           // Mettre à jour l'état de la transition
@@ -124,11 +124,12 @@ export function nav() {
       mc.style.display = "none";
     });
     if (nav.classList.contains("unfolded")) {
-      menu.src = "croix.png";
+      menu.src = "img/croix.png";
       document.documentElement.style.overflowY = "hidden";
     } else {
-      menu.src = "menu-burger.png";
+      menu.src = "img/menu-burger.png";
       document.documentElement.style.overflowY = "visible";
     }
   });
 }
+

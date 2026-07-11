@@ -1,4 +1,4 @@
-import { accessProtectedData } from "/protected.js";
+import { accessProtectedData } from "./protected.js";
 
 export function login(username, pw) {
   fetch("/login", {
